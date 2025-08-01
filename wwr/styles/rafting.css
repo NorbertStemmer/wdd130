@@ -1,83 +1,284 @@
-:root {
-    --primary-color: 3E92CC; /*. */
-    --secondary-color: 4BC6B9;
-    --accent1-color: FC9E4F;
-    --accent2-color: EE6352;
-    --heading-font: "Open Sans", sans-serif, light 300;
-    --body-font: "Open Sans", sans-serif, regular 400;
-}
-
-header {
-    background-color: var(--primary-color);
-    color: var(--accent2-color);
-}
+/* Basis-Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.logo {
-    max-width: 100px;
-    place-self: center;
-}
+
+/* Basic Colors and Fonts, Grundfarben und Schriften */
 body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
 }
-header, main, footer {
-    width: 840px;
-    margin: auto;
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: #014421;
+    padding: 1.5rem 3rem;
+    gap: 1rem;    
+    color: white;
 }
-h1, h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+
+header img.logo {
+    height: 150px;
 }
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;
+
+nav {
+    display: flex;
+    justify-content: end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
-.socialmedia a {
+
+nav a {
+    color: white;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
 }
+
+nav a:hover {
+    color: #c8e6c9;
+}
+
+section h2 {
+    text-align: center;
+    background-color: white;
+    font-size: 1.5rem;
+    color: #014421;
+    margin-bottom: 0.5rem;
+}
+
+/* Hero Section */
 .hero {
-    position: relative;
     background: white;
-    padding: 20px;
+    padding: 3.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #fff; /*it will be white text - should be enough contrast with background color */
-}
-article {
-    position: absolute;
-    top: 2rem;
 
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
-.hero article img {
-    float: right;
-    width: 125px;
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    background: #f9f9f9;
 }
+
+.hero-content p {
+    flex: 1;
+    margin: 20px;
+}
+
+.hero-content img {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* History Section */
+.history {
+    background-color: #ffffff;
+    padding: 1rem 1rem 4rem 1rem;
+}
+
+.history-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.history-content p {
+    flex: 1 1 30%;
+    min-width: 200px;
+}
+
+.history-content img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem;
+    flex-shrink: 0;
+}
+
+/* Gallery / Adventure Section */
+section .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.gallery figure {
+    text-align: center;
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery figcaption {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: #014421;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #014421;
+    color: white;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    flex: 1 1 auto;
+}
+
+.footer-btn {
+    flex: 0 0 auto;
+}
+
+.contact-button {
+    background-color: #ffffff;
+    color: #014421;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.contact-button:hover {
+    background-color: #c8e6c9;
+}
+
 .socialmedia {
     display: flex;
-    gap: 10px;
-    margin: 10px;
+    gap: 0.75rem;
+    flex: 0 0 auto;
 }
-.socialmedia a img {
-    width: 24.px;
-    height: 24px;
+
+.socialmedia img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
+}
+
+/* Prevents from scrolling horizantally, Verhindert horizontales scrollen */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Bilder nie größer als Container */
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* Responsive Text Sizes 
+768px = tablet ready, applies screen width is 768px or smaller*/
+@media (max-width: 768px) {
+    .hero-content,
+    .history-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .history-content img {
+        width: 80%;
+        max-width: 300px;
+        margin: 1rem 0;
+    }
+
+    .history-content p {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+/* 480px is for mobile, applies screen width is 480px or smaller */
+@media (max-width: 480px) {
+    header {
+/*        display: grid;
+        grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+/*        justify-items: center; */
+        text-align: center;
+    }
+
+    header img.logo {
+        margin-bottom: 1rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .gallery img {
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .gallery figcaption {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
 }
